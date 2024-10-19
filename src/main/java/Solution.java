@@ -1,17 +1,26 @@
+import java.util.Arrays;
+
 /**
  * @description；
  * @author:mar1
  * @data:2024/10/19
  **/
+
 class Solution {
-    public int removeDuplicates(int[] nums) {
-        int i = 0;
-        for (int x : nums) {
-            if (i < 2 || nums[i- 2] != x) nums[i++] = x;
-        }
-        return i;
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
     }
 }
+//class Solution {
+//    public int removeDuplicates(int[] nums) {
+//        int i = 0;
+//        for (int x : nums) {
+//            if (i < 2 || nums[i- 2] != x) nums[i++] = x;
+//        }
+//        return i;
+//    }
+//}
 //class Solution {
 //    public int removeDuplicates(int[] nums) {
 //        int fast = 1;
