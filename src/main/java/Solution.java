@@ -7,9 +7,27 @@ import java.util.Arrays;
  **/
 
 class Solution {
-    public int majorityElement(int[] nums) {
-        Arrays.sort(nums);
-        return nums[nums.length / 2];
+    public void rotate(int[] nums, int k) {
+//        System.out.println(nums.length);
+        if (nums.length <=1) {
+            return;
+        } else {
+            if(k>nums.length) {
+                k%= nums.length;
+            }
+            int a = nums.length - k;
+            int s = 0;
+            int[] arr = new int[nums.length];
+            for (int i = a; i < nums.length; i++) {
+                arr[s++] = nums[i];
+            }
+            for (int i = 0; i < a; i++) {
+                arr[s++] = nums[i];
+            }
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = arr[i];
+            }
+        }
     }
 }
 //class Solution {
